@@ -5,7 +5,7 @@ const campoNumeroFact = document.getElementById("numero-factorial");
 
 function calcularFactorial(){
     let resultado = 1; 
-    for (let i=1; i<=numeroCalc.value; i++){
+    for(let i=1; i<=numeroCalc.value; i++){
         resultado = resultado * i;
     }
     return resultado;
@@ -13,13 +13,19 @@ function calcularFactorial(){
 
 
 function mostrarResultado(){
+    if(numeroCalc.value.trim()===""){
+        campoResultado.classList.add("mensaje-error");
+        campoResultado.textContent = "Por favor ingresa un número";
+    return;   
+    }
+
     if(numeroCalc.value<0) {
-    campoResultado.classList.add("mensaje-error");
-    campoResultado.textContent = "No se permiten números negativos";
+        campoResultado.classList.add("mensaje-error");
+        campoResultado.textContent = "No se permiten números negativos";
     return;
     }else if(numeroCalc.value>170) {
-    campoResultado.classList.add("mensaje-error");
-    campoResultado.textContent = "El número es demasiado grande";
+        campoResultado.classList.add("mensaje-error");
+        campoResultado.textContent = "El número es demasiado grande";
     return;
     }
     campoResultado.classList.remove("mensaje-error");
