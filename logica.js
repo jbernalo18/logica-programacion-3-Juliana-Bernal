@@ -13,6 +13,16 @@ function calcularFactorial(){
 
 
 function mostrarResultado(){
+    if(numeroCalc.value<0) {
+    campoResultado.classList.add("mensaje-error");
+    campoResultado.textContent = "No se permiten números negativos";
+    return;
+    }else if(numeroCalc.value>170) {
+    campoResultado.classList.add("mensaje-error");
+    campoResultado.textContent = "El número es demasiado grande";
+    return;
+    }
+    campoResultado.classList.remove("mensaje-error");
     campoResultado.textContent = calcularFactorial();
     campoNumeroFact.textContent = numeroCalc.value + "!";
 
