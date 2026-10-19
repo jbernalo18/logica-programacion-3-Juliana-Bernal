@@ -1,6 +1,7 @@
 const numeroCalc = document.getElementById("numero-calc"); 
-const botonCalcular = document.getElementById("btn-sumar");
+const botonCalcular = document.getElementById("btn-calcular");
 const campoResultado = document.getElementById("resultado");
+const campoNumeroFact = document.getElementById("numero-factorial");
 
 function calcularFactorial(){
     let resultado = 1; 
@@ -13,6 +14,8 @@ function calcularFactorial(){
 
 function mostrarResultado(){
     campoResultado.textContent = calcularFactorial();
+    campoNumeroFact.textContent = numeroCalc.value + "!";
+
 }
 
 botonCalcular.addEventListener("click", mostrarResultado)
